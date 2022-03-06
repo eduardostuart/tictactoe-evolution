@@ -1,4 +1,3 @@
-import { PieceSize } from "..";
 import { HumanLarge, HumanMedium, HumanSmall } from "./human";
 import { UndeadLarge, UndeadMedium, UndeadSmall } from "./undead";
 
