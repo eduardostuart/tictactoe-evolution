@@ -2,7 +2,7 @@
 
 TicTacToe game inspired on [Gobblet Gobblers](https://www.youtube.com/watch?v=MSzkD2s4DKM) game.
 
-I created this game to play with my daughter. There are still a lot of "todo"s here and the code can be improved for sure.
+There are still a lot of "todo"s here and the code can be improved for sure.
 Feel free to create a PR or fork.
 
 ---
