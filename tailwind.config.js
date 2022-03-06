@@ -4,6 +4,12 @@ module.exports = {
     {
       pattern: /(bg|color|border)-*/,
     },
+    {
+      pattern: /w-(24|20|10)/,
+    },
+    {
+      pattern: /(bottom|top)-2/,
+    },
   ],
   theme: {
     extend: {},

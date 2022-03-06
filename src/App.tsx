@@ -27,14 +27,21 @@ export function Game() {
     }
   });
 
+  type PlayerSide = "top" | "bottom";
+
   type PlayerBoardSideProps = {
     player: Player;
+    isCurrentPlayer: boolean;
+    side: PlayerSide;
   };
 
-  const PlayerBoardSide: FC<PlayerBoardSideProps> = ({ player }) => {
+  const PlayerBoardSide: FC<PlayerBoardSideProps> = ({ player, side, isCurrentPlayer }) => {
     return (
-      <div className="w-full h-20 flex items-center flex-none bg-gray-100">
-        <div className="max-w-lg w-full mx-auto flex items-center justify-around">
+      <div className={`transition-colors relative ease-in-out delay-75 w-full h-[9rem] flex items-center flex-none`}>
+        {isCurrentPlayer && (
+          <div className={`absolute z-10  -${side === "top" ? "bottom" : "top"}-2 blur-lg h-4 w-full bg-green-600`}></div>
+        )}
+        <div className="max-w-lg z-20 relative h-full w-full mx-auto flex items-center bg-gradient-to-b  from-gray-800 to-gray-900 bg-gray-800 justify-around px-4">
           <PlayerPieces player={player} />
         </div>
       </div>
@@ -51,16 +58,9 @@ export function Game() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="w-full h-full md:p-8 p-4 bg-gray-400 flex flex-row">
-        <div className="bg-white flex-none relative w-[50px] h-full overflow-hidden rounded-2xl">
-          <div className="-rotate-90 mt-40">
-            <div className="p-1 w-[180px] text-sm rounded-md border-2 border-gray-300 bg-gray-100 shadow-lg uppercase text-md">
-              Current player <PlayerIdentification player={currentPlayer!} />
-            </div>
-          </div>
-        </div>
+      <div className="w-full h-full p-4 bg-gray-600 flex flex-row">
         <div className="max-w-lg select-none shadow flex-none w-full bg-white overflow-hidden rounded-2xl h-full mx-auto flex flex-col">
-          <PlayerBoardSide player={Player.O} />
+          <PlayerBoardSide side="top" isCurrentPlayer={currentPlayer! === Player.O} player={Player.O} />
           {error && <GameError error={error} />}
 
           <div className="w-full mx-auto relative h-full flex flex-row items-center justify-center">
@@ -68,7 +68,7 @@ export function Game() {
               <Board board={board} />
             </div>
           </div>
-          <PlayerBoardSide player={Player.X} />
+          <PlayerBoardSide side="bottom" isCurrentPlayer={currentPlayer! === Player.X} player={Player.X} />
           {winner && <WinnerDialog winner={winner} />}
         </div>
       </div>

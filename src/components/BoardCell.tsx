@@ -28,7 +28,7 @@ export const BoardCell: FC<BoardCellProps> = ({ size, player, col, row, ...props
   return (
     <div
       ref={drop}
-      className="select-none text-5xl flex flex-col items-center justify-center bg-gray-100 border border-gray-200 w-40 h-40"
+      className="select-none text-5xl flex flex-col items-center justify-center bg-gray-100 border border-gray-200 w-28 h-28"
       {...props}
     >
       {player && size ? <Fighter size={size!} player={player} /> : ""}

@@ -9,7 +9,7 @@ export interface WinnerProps {
 
 export const WinnerDialog: FC<WinnerProps> = ({ winner }) => {
   return (
-    <div className="fixed bg-black/30 left-0 right-0 bottom-0 flex items-center justify-center top-0 w-full h-full ">
+    <div className="fixed z-50 bg-black/30 left-0 right-0 bottom-0 flex items-center justify-center top-0 w-full h-full ">
       <div className="bg-white border-5 border-gray-600 shadow text-lg rounded-lg text-center">
         <div className="p-4">
           <h3 className="text-4xl font-black mb-6">Game is over</h3>
