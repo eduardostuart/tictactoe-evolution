@@ -2,9 +2,6 @@
 
 TicTacToe game inspired on [Gobblet Gobblers](https://www.youtube.com/watch?v=MSzkD2s4DKM) game.
 
-There are still a lot of "todo"s here and the code can be improved for sure.
-Feel free to create a PR or fork.
-
 ---
 
 https://user-images.githubusercontent.com/767879/156936023-1b8a5a27-5894-4b70-985f-b516f0ce26b6.mp4
@@ -20,3 +17,7 @@ https://user-images.githubusercontent.com/767879/156936023-1b8a5a27-5894-4b70-98
 
 - https://www.iconfinder.com/icons/8468004/creature_fantasy_monster_ogre_orc_icon
 - https://www.iconfinder.com/search?q=monster&price=free
+
+--- 
+There are still a lot of "todo"s here and the code can be improved for sure.
+Feel free to create a PR or fork.
